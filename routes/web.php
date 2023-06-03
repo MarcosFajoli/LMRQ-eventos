@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EventController;
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', [EventController::class, 'index']);
+Route::get('/eventos', [EventController::class, 'showAll']);
 Route::get('/eventos/criar', [EventController::class, 'create']);
-
 Route::get('/eventos/editar/{id?}', [EventController::class, 'edit']);

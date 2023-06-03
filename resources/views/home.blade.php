@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'LMRQ Eventos')
+@section('title', 'LMRQ Eventos - Todos os eventos')
 
 @section('content')
 
-<div class="row justify-content-center text-center">
-    <h1 class="col-12">Bem vindo ao LMRQ Eventos</h1>
-    <p class="col-6 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At saepe exercitationem temporibus ad dolorem ex, consequuntur molestiae est reprehenderit, cum eos beatae veniam aliquam culpa doloremque excepturi animi consequatur ratione!</p>
-</div>
+    <div class="row justify-content-start">
+        <h1 class="col-12">LMRQ Eventos - Home</h1>
+        <p class="col-6 ">Utilize a barra de navegação para utilizar o sistema.</p>
+    </div>
 
 @endsection
