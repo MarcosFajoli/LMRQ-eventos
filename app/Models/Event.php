@@ -10,4 +10,8 @@ class Event extends Model
     protected $table = 'events';
 
     use HasFactory;
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }

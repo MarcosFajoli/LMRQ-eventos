@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('presences', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedInteger('event_id');
             $table->timestamps();
 

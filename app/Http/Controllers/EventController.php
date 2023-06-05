@@ -47,10 +47,10 @@ class EventController extends Controller
 
     public function store(Request $request) {
         $event = new Event;
-
         $datenow = Carbon::now();
+        $user = auth()->user();
 
-        $event->user_id = 1; // modificar quando fizer a lógica de login
+        $event->user_id = $user->id; 
         $event->name = $request->name;
         $event->date = $request->date;
         $event->description = $request->description;

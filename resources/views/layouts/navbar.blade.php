@@ -12,9 +12,12 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/eventos/criar">Criar eventos</a></li>
-            <li><a class="dropdown-item" href="/eventos/editar">Editar eventos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/eventos">Visualizar eventos</a></li>
+            <li><a class="dropdown-item" href="/eventos/editar">Visualizar todos os eventos</a></li>
+            @auth
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/eventos">Visualizar eventos com presença</a></li>
+              <li><a class="dropdown-item" href="/eventos/editar">Editar meus eventos</a></li>
+            @endauth
           </ul>
         </li>
         <li class="nav-item">
@@ -25,7 +28,18 @@
         <input class="form-control me-1" name="search" type="search" placeholder="Procurar um evento">
         <button class="btn btn-outline-light me-2" type="submit">Procurar</button>
       </form>
-      <a class="btn btn-primary" href="/login">Faça login</a>
+      @auth
+        <form action="/logout" method="POST">
+          @csrf
+          <a class="btn btn-danger me-1" href="/logout" onclick="event.preventDefault();this.closest('form').submit();">
+            Sair
+          </a>
+        </form>
+      @endauth
+      @guest
+        <a class="btn btn-primary me-1" href="/login">Faça login</a>
+        <a class="btn btn-light" href="/register">Registrar-se</a>
+      @endguest
     </div>
   </div>
 </nav>
