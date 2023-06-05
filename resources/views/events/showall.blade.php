@@ -4,14 +4,22 @@
 
 @section('content')
 
+
     <div class="row justify-content-start">
-        <h1 class="col-12">LMRQ Eventos - Todos os eventos</h1>
-        <p class="col-6">Listagem com todos os eventos disponíveis!</p>
+        @if (!$search)
+            <h1 class="col-12">LMRQ Eventos - Todos os eventos</h1>
+            <p class="col-6">Listagem com todos os eventos disponíveis!</p>
+        @else
+            <h1 class="col-12">Resultado para: {{ $search }}</h1>
+            <p class="col-6">Listagem com todos os eventos disponíveis com base na pesquisa.</p>
+        @endif
     </div>
 
-    @php $count = 0; @endphp
+    @php 
+        $count = 0; 
+    @endphp
 
-    @if (count($events) == 0)
+    @if (!$events)
         <h4 class="p-5">Não existem eventos disponíveis no momento. Cadastre um novo evento para que ele apareça aqui!</h3>
     @else
         @foreach($events as $event)
@@ -26,7 +34,7 @@
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $event->date }}</h6>
                                 <p class="card-text">{{ $event->description }}</p>
-                                <a href="eventos/{{ $event->id }}" class="btn btn-primary">Abrir evento</a>
+                                <a href="/eventos/{{ $event->id }}" class="btn btn-primary">Abrir evento</a>
                             </div>
                         </div>
                     </div>

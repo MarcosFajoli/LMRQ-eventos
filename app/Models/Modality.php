@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Modality extends Model
 {
-    protected $table = 'events';
-
+    protected $table = 'modalities';
+    
     use HasFactory;
 }

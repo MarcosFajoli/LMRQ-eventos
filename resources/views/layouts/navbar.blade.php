@@ -21,10 +21,11 @@
           <a class="nav-link" href="/contato">Contato</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Procurar um evento" aria-label="">
-        <button class="btn btn-outline-light" type="submit">Procurar</button>
+      <form class="d-flex" role="search" action="/eventos/" method="GET">
+        <input class="form-control me-1" name="search" type="search" placeholder="Procurar um evento">
+        <button class="btn btn-outline-light me-2" type="submit">Procurar</button>
       </form>
+      <a class="btn btn-primary" href="/login">Faça login</a>
     </div>
   </div>
 </nav>
