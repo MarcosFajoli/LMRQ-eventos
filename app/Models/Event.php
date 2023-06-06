@@ -11,7 +11,13 @@ class Event extends Model
 
     use HasFactory;
 
+    protected $guarded = [];
+
     public function user() {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'presences', 'event_id', 'user_id'); 
     }
 }

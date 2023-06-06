@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark fixed-top navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">LMRQ Eventos</a>
+    <a class="navbar-brand" href="/">LMRQ Eventos</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -15,7 +15,7 @@
             <li><a class="dropdown-item" href="/eventos">Visualizar todos os eventos</a></li>
             @auth
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/eventos">Visualizar presenças</a></li>
+              <li><a class="dropdown-item" href="/eventos/presencas">Visualizar presenças</a></li>
               <li><a class="dropdown-item" href="/dashboard">Meus eventos</a></li>
             @endauth
           </ul>

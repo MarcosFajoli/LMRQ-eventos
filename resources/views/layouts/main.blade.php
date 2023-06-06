@@ -21,6 +21,11 @@
     <body>
         @extends('layouts.navbar')
         <div class="container">
+            @if(session('msg'))
+            <div class="alert alert-primary" role="alert">
+                {{ session('msg') }}
+            </div>
+            @endif
             @yield('content')
         </div>
         <footer>
