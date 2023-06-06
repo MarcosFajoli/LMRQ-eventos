@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\Event;
 use App\Models\Modality;
+use App\Models\User;
 
 class EventController extends Controller
 {
@@ -29,8 +30,9 @@ class EventController extends Controller
 
     public function showOne($id) {
         $event = Event::findOrFail($id);
+        $eventUser = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.showone', ['event' => $event]);
+        return view('events.showone', ['event' => $event, 'eventUser'=> $eventUser]);
     }
 
     public function create() {
@@ -59,7 +61,15 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/eventos'.$event->user_id);
+        return redirect('/eventos/'.$event->user_id);
 
+    }
+
+    public function dashboard() {
+        $user = auth()->user();
+
+        $events = $user->events;
+
+        return view('dashboard', ['events' => $events]);
     }
 }

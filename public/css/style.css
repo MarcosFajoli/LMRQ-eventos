@@ -5,3 +5,7 @@
 .container {
     margin-top: 80px;
 }
+
+.border-gray {
+    border: 1px solid gray;
+}

@@ -12,11 +12,11 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/eventos/criar">Criar eventos</a></li>
-            <li><a class="dropdown-item" href="/eventos/editar">Visualizar todos os eventos</a></li>
+            <li><a class="dropdown-item" href="/eventos">Visualizar todos os eventos</a></li>
             @auth
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/eventos">Visualizar eventos com presença</a></li>
-              <li><a class="dropdown-item" href="/eventos/editar">Editar meus eventos</a></li>
+              <li><a class="dropdown-item" href="/eventos">Visualizar presenças</a></li>
+              <li><a class="dropdown-item" href="/dashboard">Meus eventos</a></li>
             @endauth
           </ul>
         </li>

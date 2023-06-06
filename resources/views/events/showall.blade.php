@@ -19,7 +19,7 @@
         $count = 0; 
     @endphp
 
-    @if (!$events)
+    @if (count($events) == 0)
         <h4 class="p-5">Não existem eventos disponíveis no momento. Cadastre um novo evento para que ele apareça aqui!</h3>
     @else
         @foreach($events as $event)
